@@ -1,0 +1,69 @@
+Loading Dictionary [ words_alpha.txt ]...[ DONE ]
+Found 370099 words in dictionary
+Min input characters for suggestion : 3
+Max suggestions                     : 5
+
+
+Input>> hel
+Suggestions: 1) helianthin  2) helper  3) helicopters  4) heliographic  5) helenn
+
+Input>> hell
+Suggestions: 1) hellenisticism  2) helled  3) hellos  4) helladotherium  5) hell
+
+Input>> hello
+Suggestions: 1) hellos  2) helloed  3) hello  4) helloes  5) helloing
+
+Input>> hello
+** Final string: hello
+
+Input>> som
+Suggestions: 1) someone  2) someones  3) somnambulistic  4) somniloquize  5) somalo
+
+Input>> som3
+** Final string: somnambulistic
+
+Input>> des
+Suggestions: 1) despaired  2) desiderate  3) desulphurised  4) despotisms  5) desirous
+
+Input>> dest
+Suggestions: 1) destroyer  2) destination  3) desto  4) destiny  5) destinations
+
+Input>> destr
+Suggestions: 1) destroyer  2) destroyingly  3) destructivity  4) destruct  5) destructs
+
+Input>> destr9
+Incorrect selection!
+
+Suggestions: 1) destroyer  2) destroyingly  3) destructivity  4) destruct  5) destructs
+
+Input>> destr1
+** Final string: destroyer
+
+Input>> fin
+Suggestions: 1) fingernail  2) finedraw  3) finfishes  4) finishes  5) fingerwork
+
+Input>> fina
+Suggestions: 1) financialist  2) finalities  3) finaglers  4) finagles  5) finary
+
+Input>> final
+Suggestions: 1) finalities  2) finalis  3) finals  4) finalize  5) finalized
+
+Input>> final1
+** Final string: finalities
+
+Input>> sus
+Suggestions: 1) susceptivity  2) suspiciousness  3) susurrate  4) suspenderless  5) suspiratious
+
+Input>> susp
+Suggestions: 1) suspiciousness  2) suspenderless  3) suspiratious  4) suspending  5) suspecter
+
+Input>> suspe
+Suggestions: 1) suspenderless  2) suspending  3) suspecter  4) suspecting  5) suspensibility
+
+Input>> suspe
+Suggestions: 1) suspenderless  2) suspending  3) suspecter  4) suspecting  5) suspensibility
+
+Input>> suspe2
+** Final string: suspending
+
+Input>>
