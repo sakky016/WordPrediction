@@ -59,7 +59,10 @@ void DisplaySuggestedWords(const map<int, string> & suggestedWords)
 //----------------------------------------------------------------------------------------------
 // @name                    : WordPredictionThread
 //
-// @description             : This thread displays suggestion when triggered.
+// @description             : This thread monitors conditions required to provide word
+//                            suggestions.  The prediction PREDICTION_WAIT_DURATION_MILLISEC makes 
+//                            sure that if a user is typing known characters, he is not bugged 
+//                            by suggestions continuously.
 //
 // @returns                 : Nothing
 //----------------------------------------------------------------------------------------------
@@ -78,15 +81,14 @@ void WordPredictionThread()
     // Loop continues indefinitely
     while (1)
     {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         long long currentTimestamp = getCurrentTimestampInMilliseconds();
 
         if (g_doPrediction == true &&
             g_inputString.size() > 0 &&
             currentTimestamp - g_lastEnteredTimestamp >= PREDICTION_WAIT_DURATION_MILLISEC)
         {
-            // Find list of of auto-completion words as per dictionary. Clear the existing
-            // suggestions first.
+            // Find list of of auto-completion words as per dictionary. 
             g_mtx.lock();
             g_suggestedWords = wordPredictor.SuggestWords(g_inputString);
             DisplaySuggestedWords(g_suggestedWords);
@@ -165,12 +167,11 @@ int main()
 
             if (ch == '\r')
             {
-               // g_mtx.lock();
+                g_mtx.lock();
                 g_doPrediction = false;
                 resultString = g_inputString;
                 g_inputString.clear();
-                g_suggestedWords.clear();
-               // g_mtx.unlock();
+                g_mtx.unlock();
                 break;
             }
 
@@ -194,8 +195,9 @@ int main()
             // Form the string with this character appended to existing characters
             if (isalpha(ch))
             {
+                g_mtx.lock();
                 g_inputString.push_back(ch);
-                g_suggestedWords.clear();
+                g_mtx.unlock();
             }
 
             // Notify the thread that a string is ready for prediction
