@@ -33,6 +33,16 @@ void DisplaySuggestedWords(const map<int, string> & suggestedWords)
     cout << endl;
 }
 
+//----------------------------------------------------------------------------------------------
+// @name                    : FindSuggestedStringFromIndex
+//
+// @description             : Fetches the suggested word as per the index specified by user.
+//
+// param @suggestedWords    : vector of strings of suggested words
+// param @indexChar         : Choice entered by user
+//
+// @returns                 : string corresonding to indexChar
+//----------------------------------------------------------------------------------------------
 string FindSuggestedStringFromIndex(const map<int, string> & suggestedWords, char indexChar)
 {
     string result;
