@@ -23,7 +23,13 @@ bool g_startInputPrompt = false;
 mutex g_mtx;
 long long g_lastEnteredTimestamp;
 
-
+//----------------------------------------------------------------------------------------------
+// @name                    : getCurrentTimestampInMilliseconds
+//
+// @description             : Fetch current timestamp in milliseconds
+//
+// @returns                 : Timestamp
+//----------------------------------------------------------------------------------------------
 long long getCurrentTimestampInMilliseconds()
 {
     long long ts_us = chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::
